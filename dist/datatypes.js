@@ -68,3 +68,45 @@ const user = {
 };
 console.log(user[id]);
 console.log(user.name);
+// Type Inference ..means ts automatically detect type of variable 
+function add(a, b) {
+    return a + b;
+}
+const str = "joker"; //e.g of type inference
+const ress = add(3, 4); //automatically detect type
+console.log(ress);
+// Array..2 ways..operation (push , pop , length , map , filter , reduce )
+let numbers = [89, 87, 73]; //type[]
+console.log(numbers[2]);
+let sg = ["lod", "zod", "k"]; //Array<Type>
+console.log(sg[1]);
+//multi type array
+let dta = ["dta", 233];
+//tuples .. fixed data type for each element , fixed length as declare , fix format order
+let emply = ["ll", 23, "ksk"]; // phle string in hoga then number hi.then string hi
+//destructuring
+let [usern, age, fristn] = emply;
+console.log(usern);
+//e.g ..use case in API response , function 
+function getUserInfi() {
+    return ["rohit", 45];
+}
+//enum
+var Direction;
+(function (Direction) {
+    Direction["up"] = "north";
+    Direction["down"] = "south";
+    Direction["front"] = "east";
+})(Direction || (Direction = {}));
+console.log(Direction.down);
+//union ..variable can have multiple data type
+let datafromdb = "lokesh";
+let prisnt = (data) => {
+    if (typeof data === "string") {
+        console.log(data.toUpperCase());
+    }
+    else {
+        console.log(data);
+    }
+};
+prisnt("loke");

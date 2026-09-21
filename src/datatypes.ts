@@ -88,3 +88,74 @@ const user = {
 }
 console.log(user[id]);
 console.log(user.name);
+
+// Type Inference ..means ts automatically detect type of variable 
+function add(a:number , b:number){
+    return a+b;
+}
+const str = "joker"; //e.g of type inference
+const ress = add(3,4); //automatically detect type
+console.log(ress);
+
+// Array..2 ways..operation (push , pop , length , map , filter , reduce )
+let numbers : number[] = [89,87,73]; //type[]
+console.log(numbers[2]);
+
+let sg : Array<string> = ["lod" , "zod" , "k"]; //Array<Type>
+console.log(sg[1]);
+
+//multi type array
+let dta : (string | number)[] = ["dta" , 233];
+
+//tuples .. fixed data type for each element , fixed length as declare , fix format order
+let emply : [string , number , string] = ["ll" , 23 , "ksk"]; // phle string in hoga then number hi.then string hi
+//destructuring
+let [usern , age , fristn] = emply;
+console.log(usern);
+
+//e.g ..use case in API response , function 
+function getUserInfi():[string , number]{
+    return ["rohit" , 45];
+}
+
+//enum
+enum Direction {
+    up = "north",
+    down = "south",
+    front = "east"
+}
+console.log(Direction.down);
+
+//union ..variable can have multiple data type
+let datafromdb : string | number = "lokesh";
+let prisnt = (data : string | number)=>{ //type narrowing means.. telling what is data type to ts
+    if(typeof data === "string"){
+        console.log(data.toUpperCase());
+    }else{
+        console.log(data);
+    }
+}
+prisnt("loke");
+
+//intersection
+type User = {
+    username : string
+}
+type Admin = {
+    admin : string[]
+}
+type AdminUser = User & Admin; //intersection
+let a : AdminUser = {
+    username : "lo",
+    admin : ["sdd"]
+}
+
+//optional and default parameter in function
+//option ..means ese parameter jo do ya mt do
+function g(name ?:string){
+    console.log(name);//if no argument pass ..it will print undefined ..but no error..and it must be the last parameter in function
+}
+//default parameter ..means if no value pass ..it will take default value
+function gg(name : string = "guest"){
+    console.log(name);
+}

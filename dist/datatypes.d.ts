@@ -22,3 +22,19 @@ declare const user: {
     [id]: number;
     name: string;
 };
+declare function add(a: number, b: number): number;
+declare const str = "joker";
+declare const ress: number;
+declare let numbers: number[];
+declare let sg: Array<string>;
+declare let dta: (string | number)[];
+declare let emply: [string, number, string];
+declare let usern: string, age: number, fristn: string;
+declare function getUserInfi(): [string, number];
+declare enum Direction {
+    up = "north",
+    down = "south",
+    front = "east"
+}
+declare let datafromdb: string | number;
+declare let prisnt: (data: string | number) => void;
